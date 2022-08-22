@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fabberlaan
+spec:
+  selector:
+    matchLabels:
+      app: fabberlaan
+  replicas: 2
+  template: 
+    metadata:
+      labels:
+        app: fabberlaan
+    spec:
+      containers:
+        - name: fabberlaan
+          image: fabberlaan/fabberlaan
+          ports:
+            - containerPort: 3000
